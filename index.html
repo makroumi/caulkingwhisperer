@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Caulking & Sealing Services</title>
+    <meta name="description" content="Professional caulking services in Toronto. Affordable flat rates for bathtubs, kitchens, windows and more. Same-day service available.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Hero section background image with overlay */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        /* Fixed size for each image/video container in the gallery */
+        .gallery-item {
+            flex-shrink: 0;
+            width: 320px;
+            height: 240px;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Hide scrollbar for horizontal gallery */
+        .horizontal-scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .horizontal-scroll-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Container for media with loading/error overlays */
+        .media-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .error-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f8d7da;
+            color: #721c24;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            text-align: center;
+            z-index: 20;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Ensure the body uses the Inter font as specified in general instructions */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20 md:py-32 px-4 md:px-0 flex items-center justify-center min-h-screen">
+        <div class="container mx-auto text-center max-w-4xl px-4">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Say Goodbye to Cracks & Leaks</h1>
+            <h2 class="text-xl md:text-2xl mb-8">Professional Caulking You Can Trust</h2>
+            <p class="text-lg md:text-xl mb-8">Affordable flat rates starting at $100. Kitchens, bathrooms, windows, and more.</p>
+            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 inline-block shadow-lg hover:shadow-xl">
+                Book Now <i class="fas fa-chevron-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section - Highlights key benefits -->
+    <section class="py-16 bg-white px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Why Homeowners Trust Us</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Benefit Card 1: Flat Rates -->
+                <div class="text-center p-6 rounded-xl bg-gray-50 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Flat Rates</h3>
+                    <p class="text-gray-600">No surprises - just honest, upfront pricing</p>
+                </div>
+                <!-- Benefit Card 2: Professional Finish -->
+                <div class="text-center p-6 rounded-xl bg-gray-50 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Professional Finish</h3>
+                    <p class="text-gray-600">Guaranteed quality workmanship</p>
+                </div>
+                <!-- Benefit Card 3: Premium Materials -->
+                <div class="text-center p-6 rounded-xl bg-gray-50 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Premium Materials</h3>
+                    <p class="text-gray-600">Mold-resistant, waterproof caulking</p>
+                </div>
+                <!-- Benefit Card 4: Fast Service -->
+                <div class="text-center p-6 rounded-xl bg-gray-50 shadow-sm hover:shadow-md transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Fast Service</h3>
+                    <p class="text-gray-600">Quick response and same-day service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Pricing Section - Detailed menu with categories and pricing -->
+    <section class="py-16 bg-gray-50 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Service Menu</h2>
+            
+            <!-- Introductory Text -->
+            <div class="bg-white rounded-xl shadow-md p-8 mb-12 border border-gray-200">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">Professional Sealing & Repair Services</h3>
+                <p class="text-gray-700 mb-4">
+                    Quality Workmanship. Transparent Pricing. Lasting Results.
+                </p>
+                <p class="text-gray-600">
+                    At Caulking Whisperer, we believe in providing exceptional service with clear, upfront pricing. We use only high-quality, professional-grade sealants and materials, ensuring a durable, watertight, and aesthetically pleasing finish that protects your home for years to come. Say goodbye to unsightly gaps and hello to a perfectly sealed space!
+                </p>
+            </div>
+
+            <!-- Minimum Service Fee -->
+            <div class="bg-blue-100 text-blue-800 rounded-xl shadow-md p-6 mb-12 border border-blue-200">
+                <h3 class="text-xl font-bold mb-2">Minimum Service Fee: $175</h3>
+                <p class="text-blue-700">
+                    This fee applies to all service calls to cover travel, setup, and ensure efficient service. If the total cost of your selected services is less than $175, the minimum fee will apply.
+                </p>
+            </div>
+
+            <!-- Service Category: Bathroom & Kitchen Sealing -->
+            <div class="bg-white rounded-xl shadow-md p-8 mb-8 border border-gray-200">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-bath text-blue-600 mr-3"></i> Bathroom & Kitchen Sealing
+                </h3>
+                <p class="text-gray-600 mb-6">
+                    Protect your wet areas from water damage, mold, and mildew with a fresh, clean seal.
+                </p>
+                <div class="space-y-6">
+                    <!-- Service Item: Standard Bathtub/Shower Re-caulking -->
+                    <div class="border-b border-gray-100 pb-4 last:border-b-0">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                            <p class="text-lg font-medium text-gray-900">Standard Bathtub/Shower Re-caulking</p>
+                            <p class="text-lg font-semibold text-blue-600">$125 - $175</p>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            <span class="font-semibold">What's Included:</span> Removal of old caulk, thorough cleaning of joint, application of premium 100% silicone sealant for a watertight, mold-resistant seal. (For one standard tub or shower unit, up to ~30 linear feet)
+                        </p>
+                    </div>
+                    <!-- Service Item: Kitchen Sink & Backsplash Re-caulking -->
+                    <div class="border-b border-gray-100 pb-4 last:border-b-0">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                            <p class="text-lg font-medium text-gray-900">Kitchen Sink & Backsplash Re-caulking</p>
+                            <p class="text-lg font-semibold text-blue-600">$95 - $135</p>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            <span class="font-semibold">What's Included:</span> Removal of old caulk, cleaning, and application of high-quality silicone sealant around your kitchen sink and countertop backsplash. (Up to ~20 linear feet)
+                        </p>
+                    </div>
+                    <!-- Service Item: Toilet Base / Vanity Base Sealing -->
+                    <div class="border-b border-gray-100 pb-4 last:border-b-0">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                            <p class="text-lg font-medium text-gray-900">Toilet Base / Vanity Base Sealing</p>
+                            <p class="text-lg font-semibold text-blue-600">$75 - $100</p>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            <span class="font-semibold">What's Included:</span> Cleaning and application of sealant around the base of one toilet or vanity. (Often covered by Minimum Service Fee if isolated)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Category: Window & Door Sealing -->
+            <div class="bg-white rounded-xl shadow-md p-8 mb-8 border border-gray-200">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-window-maximize text-blue-600 mr-3"></i> Window & Door Sealing
+                </h3>
+                <p class="text-gray-600 mb-6">
+                    Improve energy efficiency, prevent drafts, and protect your window and door frames from moisture.
+                </p>
+                <div class="space-y-6">
+                    <!-- Service Item: Standard Window Re-caulking -->
+                    <div class="border-b border-gray-100 pb-4 last:border-b-0">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                            <p class="text-lg font-medium text-gray-900">Standard Window Re-caulking (per window)</p>
+                            <p class="text-lg font-semibold text-blue-600">$55 - $80</p>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            <span class="font-semibold">What's Included:</span> Removal of old caulk (exterior and/or interior), surface preparation, and application of durable, weather-resistant sealant. (Price per standard-sized window. Minimum service fee applies for small quantities.)
+                        </p>
+                    </div>
+                    <!-- Service Item: Standard Exterior Door Frame Sealing -->
+                    <div class="border-b border-gray-100 pb-4 last:border-b-0">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                            <p class="text-lg font-medium text-gray-900">Standard Exterior Door Frame Sealing</p>
+                            <p class="text-lg font-semibold text-blue-600">$75 - $120</p>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            <span class="font-semibold">What's Included:</span> Removal of old caulk, surface preparation, and application of weather-resistant sealant around one standard exterior door frame.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Category: General Joint Sealing -->
+            <div class="bg-white rounded-xl shadow-md p-8 mb-8 border border-gray-200">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-border-all text-blue-600 mr-3"></i> General Joint Sealing
+                </h3>
+                <p class="text-gray-600 mb-6">
+                    Seal cracks and gaps in various areas to enhance appearance and prevent air/moisture intrusion.
+                </p>
+                <div class="space-y-6">
+                    <!-- Service Item: Small Interior Joint Sealing -->
+                    <div class="border-b border-gray-100 pb-4 last:border-b-0">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                            <p class="text-lg font-medium text-gray-900">Small Interior Joint Sealing</p>
+                            <p class="text-lg font-semibold text-blue-600">$110 - $170</p>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            <span class="font-semibold">What's Included:</span> Cleaning and sealing of small, non-wet interior joints (e.g., baseboards, wall-to-ceiling lines, small floor joints). (Up to ~20 linear feet)
+                        </p>
+                    </div>
+                    <!-- Service Item: Small Exterior Joint Sealing -->
+                    <div class="border-b border-gray-100 pb-4 last:border-b-0">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                            <p class="text-lg font-medium text-gray-900">Small Exterior Joint Sealing</p>
+                            <p class="text-lg font-semibold text-blue-600">$120 - $180</p>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            <span class="font-semibold">What's Included:</span> Cleaning and sealing of small exterior joints (e.g., around vents, pipes, small expansion joints). (Up to ~15 linear feet)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Category: Mortar Touch-Ups & Minor Repairs -->
+            <div class="bg-white rounded-xl shadow-md p-8 mb-8 border border-gray-200">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-hammer text-blue-600 mr-3"></i> Mortar Touch-Ups & Minor Repairs
+                </h3>
+                <p class="text-gray-600 mb-6">
+                    Address small cracks and deterioration in mortar to maintain structural integrity and curb appeal.
+                </p>
+                <div class="space-y-6">
+                    <!-- Service Item: Small Mortar Touch-Up / Crack Repair -->
+                    <div class="border-b border-gray-100 pb-4 last:border-b-0">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                            <p class="text-lg font-medium text-gray-900">Small Mortar Touch-Up / Crack Repair</p>
+                            <p class="text-lg font-semibold text-blue-600">$150 - $275</p>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            <span class="font-semibold">What's Included:</span> Cleaning of affected area, preparation, and application of appropriate mortar mix for minor cracks or small sections of deteriorated mortar (e.g., a few bricks, hairline cracks in parging). (For areas up to 5 sq ft, or 1-3 linear feet of crack)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- When a Custom Quote is Needed -->
+            <div class="bg-yellow-100 text-yellow-800 rounded-xl shadow-md p-8 mb-12 border border-yellow-200">
+                <h3 class="text-xl font-bold mb-4">When a Custom Quote is Needed:</h3>
+                <p class="text-yellow-700 mb-4">
+                    For projects that involve more extensive work, specialized materials, or unique challenges, a custom on-site quote will be provided. This ensures accuracy and fair pricing for both parties. Examples include:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-yellow-700">
+                    <li>Extensive Mold or Water Damage: Requiring significant remediation before sealing.</li>
+                    <li>Large-Scale Projects: Such as whole-house exterior caulking or major brick/mortar repair.</li>
+                    <li>Difficult Access: Jobs requiring tall ladders, scaffolding, or complex safety measures.</li>
+                    <li>Specialty Sealants/Colors: If specific, high-cost, or custom-colored materials are requested.</li>
+                    <li>Structural Repairs: Any work beyond simple cosmetic touch-ups to mortar.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Gallery Section - Fixed Implementation -->
+    <section class="py-16 bg-white px-4 relative">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Work Gallery</h2>
+            <div id="gallery-container" class="relative">
+                <div id="gallery-scroll" class="flex overflow-x-auto space-x-8 pb-4 horizontal-scroll-container scroll-smooth">
+                    <!-- Videos from GitHub Repo (assets/a.mp4, b.mp4, c.mp4) -->
+                    <div class="gallery-item">
+                        <div class="overflow-hidden rounded-lg shadow-md border border-gray-200 w-full h-full">
+                            <div class="media-container">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <video src="https://raw.githubusercontent.com/makroumi/caulkingwhisperer/main/assets/a.mp4" autoplay loop muted playsinline class="w-full h-full object-cover" onloadeddata="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'video')">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="overflow-hidden rounded-lg shadow-md border border-gray-200 w-full h-full">
+                            <div class="media-container">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <video src="https://raw.githubusercontent.com/makroumi/caulkingwhisperer/main/assets/b.mp4" autoplay loop muted playsinline class="w-full h-full object-cover" onloadeddata="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'video')">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="overflow-hidden rounded-lg shadow-md border border-gray-200 w-full h-full">
+                            <div class="media-container">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <video src="https://raw.githubusercontent.com/makroumi/caulkingwhisperer/main/assets/c.mp4" autoplay loop muted playsinline class="w-full h-full object-cover" onloadeddata="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'video')">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Images from GitHub Repo (assets/1.jpeg to 7.jpeg) -->
+                    <div class="gallery-item">
+                        <div class="overflow-hidden rounded-lg shadow-md border border-gray-200 w-full h-full">
+                            <div class="media-container">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://raw.githubusercontent.com/makroumi/caulkingwhisperer/main/assets/1.jpeg" alt="Bathtub caulking work" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="overflow-hidden rounded-lg shadow-md border border-gray-200 w-full h-full">
+                            <div class="media-container">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://raw.githubusercontent.com/makroumi/caulkingwhisperer/main/assets/2.jpeg" alt="Kitchen sink caulking" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="overflow-hidden rounded-lg shadow-md border border-gray-200 w-full h-full">
+                            <div class="media-container">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://raw.githubusercontent.com/makroumi/caulkingwhisperer/main/assets/3.jpeg" alt="Shower tile sealing" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="overflow-hidden rounded-lg shadow-md border border-gray-200 w-full h-full">
+                            <div class="media-container">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://raw.githubusercontent.com/makroumi/caulkingwhisperer/main/assets/4.jpeg" alt="Window sealing work" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="overflow-hidden rounded-lg shadow-md border border-gray-200 w-full h-full">
+                            <div class="media-container">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://raw.githubusercontent.com/makroumi/caulkingwhisperer/main/assets/5.jpeg" alt="Door frame caulking" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="overflow-hidden rounded-lg shadow-md border border-gray-200 w-full h-full">
+                            <div class="media-container">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://raw.githubusercontent.com/makroumi/caulkingwhisperer/main/assets/6.jpeg" alt="Interior joint sealing" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="overflow-hidden rounded-lg shadow-md border border-gray-200 w-full h-full">
+                            <div class="media-container">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://raw.githubusercontent.com/makroumi/caulkingwhisperer/main/assets/7.jpeg" alt="Exterior joint repair" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button id="scroll-left-btn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-75 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition duration-300 z-10 hidden md:block">
+                    <i class="fas fa-chevron-left text-blue-600 text-2xl"></i>
+                </button>
+                <button id="scroll-right-btn" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-75 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition duration-300 z-10 hidden md:block">
+                    <i class="fas fa-chevron-right text-blue-600 text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-blue-600 text-white px-4 rounded-t-xl">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-12">Book Your Service Now</h2>
+            <div class="bg-white text-gray-800 rounded-xl p-8 shadow-lg">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="text-xl mr-4 text-blue-600">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Phone</p>
+                                    <a href="tel:6475094346" class="text-blue-600 hover:underline">(647) 509-4346</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="text-xl mr-4 text-green-500">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">WhatsApp</p>
+                                    <a href="https://wa.me/message/5NIDPCR2Y2DGM1" class="text-green-500 hover:underline">Message us on WhatsApp</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="text-xl mr-4 text-red-500">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Service Area</p>
+                                    <p>Toronto, Ontario and surrounding areas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Quick Booking</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block mb-1">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 rounded border border-gray-300" placeholder="Your Name" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 rounded border border-gray-300" placeholder="your@email.com" required>
+                            </div>
+                            <button type="submit" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300 w-full">
+                                Request Service
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-4 rounded-b-xl">
+        <div class="container mx-auto text-center">
+            <p class="mb-2">Serving Toronto, Ontario, Canada and Surrounding Areas</p>
+            <p class="font-semibold mb-4">Fast, Affordable, Professional</p>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="text-blue-400 hover:text-blue-300 transition">
+                    <i class="fab fa-facebook text-2xl"></i>
+                </a>
+                <a href="#" class="text-blue-300 hover:text-blue-200 transition">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="#" class="text-pink-500 hover:text-pink-400 transition">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+            </div>
+            <p class="text-sm text-gray-400">&copy; 2025 Caulking Whisperer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/message/5NIDPCR2Y2DGM1" class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition duration-300 transform hover:scale-110">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <script>
+        // Gallery scrolling functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryScroll = document.getElementById('gallery-scroll');
+            const scrollLeftBtn = document.getElementById('scroll-left-btn');
+            const scrollRightBtn = document.getElementById('scroll-right-btn');
+
+            if (galleryScroll && scrollLeftBtn && scrollRightBtn) {
+                const scrollAmount = 352; // 320px (item width) + 32px (space-x-8)
+                
+                scrollLeftBtn.addEventListener('click', function() {
+                    galleryScroll.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+                
+                scrollRightBtn.addEventListener('click', function() {
+                    galleryScroll.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+                
+                // Function to update button visibility based on scroll position
+                function updateButtonVisibility() {
+                    // Hide left button if at the beginning of the scroll area
+                    if (galleryScroll.scrollLeft <= 0) {
+                        scrollLeftBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                        scrollLeftBtn.disabled = true;
+                    } else {
+                        scrollLeftBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                        scrollLeftBtn.disabled = false;
+                    }
+
+                    // Hide right button if at the end of the scroll area (with a small tolerance)
+                    const maxScroll = galleryScroll.scrollWidth - galleryScroll.clientWidth;
+                    if (galleryScroll.scrollLeft >= maxScroll - 1) { // -1 for a small tolerance
+                        scrollRightBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                        scrollRightBtn.disabled = true;
+                    } else {
+                        scrollRightBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                        scrollRightBtn.disabled = false;
+                    }
+                }
+
+                galleryScroll.addEventListener('scroll', updateButtonVisibility);
+                
+                // Initial state check
+                updateButtonVisibility();
+            }
+        });
+        
+        // Media error handling function (updated to handle both images and videos)
+        function showMediaError(mediaElement, type) {
+            const container = mediaElement.parentElement;
+            const overlay = document.createElement('div');
+            overlay.className = 'error-overlay';
+            overlay.innerHTML = `
+                <i class="fas fa-exclamation-triangle text-2xl mb-2"></i>
+                <p class="text-sm">${type === 'video' ? 'Video' : 'Image'} unavailable</p>
+                <p class="text-xs mt-1">Please try refreshing</p>
+            `;
+            container.appendChild(overlay);
+            mediaElement.style.display = 'none'; // Hide the broken media icon
+        }
+    </script>
+</body>
+</html>

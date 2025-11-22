@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Caulking Whisperer</title>
+    <meta name="description" content="Explore our photo gallery showcasing professional caulking projects in Toronto. See our work in bathrooms, kitchens, and more.">
+    <meta name="keywords" content="Toronto caulking photos, caulking project gallery, bathroom caulking Toronto, kitchen sealing images">
+    <meta name="author" content="Caulking Whisperer">
+    <!-- Schema.org for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": "Caulking Whisperer Photo Gallery",
+        "url": "https://caulkingwhisperer.ca/gallery.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Caulking Whisperer",
+            "telephone": "(647) 509-4346",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Toronto",
+                "addressRegion": "ON",
+                "addressCountry": "CA"
+            }
+        }
+    }
+    </script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header with Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="assets/images/logo.png" alt="Caulking Whisperer Toronto Logo" class="h-12">
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-800 font-medium">Home</a>
+                    <a href="services.html" class="nav-link text-gray-800 font-medium">Caulking Services</a>
+                    <a href="colors.html" class="nav-link text-gray-800 font-medium">Colors</a>
+                    <a href="blogs.html" class="nav-link text-gray-800 font-medium">Blogs</a>
+                    <a href="contact.html" class="nav-link text-gray-800 font-medium">Contact Us</a>
+                </nav>
+            </div>
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-md">
+                <a href="index.html" class="block py-2 text-gray-800 font-medium border-b border-gray-100">Home</a>
+                <a href="services.html" class="block py-2 text-gray-800 font-medium border-b border-gray-100">Caulking Services</a>
+                <a href="colors.html" class="block py-2 text-gray-800 font-medium border-b border-gray-100">Colors</a>
+                <a href="blogs.html" class="block py-2 text-gray-800 font-medium border-b border-gray-100">Blogs</a>
+                <a href="contact.html" class="block py-2 text-gray-800 font-medium">Contact Us</a>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <!-- Photo Gallery Section -->
+        <section class="py-2 bg-white px-4 relative fade-in">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Caulking Photo Gallery</h2>
+                <div id="gallery-container" class="relative">
+                    <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pb-4">
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753393007/IMG_0089_1_uygm7n.jpg" alt="Caulking work image 1" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753159382/13_c5mwbe.jpg" alt="Caulking work image 2" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753393008/IMG_0084_l7nf5y.jpg" alt="Caulking work image 3" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753393008/IMG_5117_1_bcny7z.jpg" alt="Caulking work image 4" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753393007/IMG_4756_1_jtggxf.jpg" alt="Caulking work image 5" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753159384/5_tk9mpc.jpg" alt="Caulking work image 6" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753159383/2_foad7k.jpg" alt="Caulking work image 7" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753159384/3_jkdpyh.jpg" alt="Caulking work image 8" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753159384/4_xpfhfc.jpg" alt="Caulking work image 9" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753160799/IMG_1196_byzlzh.jpg" alt="Caulking work image 10" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753160799/IMG_1206_vwa6ue.jpg" alt="Caulking work image 11" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753159382/11_gbltmy.jpg" alt="Caulking work image 12" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753159382/12_x7hk0r.jpg" alt="Caulking work image 13" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753159386/9_xrwty9.jpg" alt="Caulking work image 14" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753159382/10_rf8jrq.jpg" alt="Caulking work image 15" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753159385/7_ivb7fo.jpg" alt="Caulking work image 16" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                        <div class="gallery-item rounded-lg shadow-md border border-gray-200">
+                            <div class="media-container aspect-w-4 aspect-h-3">
+                                <div class="loading-overlay">
+                                    <div class="spinner"></div>
+                                </div>
+                                <img src="https://res.cloudinary.com/dojphvluv/image/upload/v1753159385/8_xf9b18.jpg" alt="Caulking work image 17" class="w-full h-full object-cover" onload="this.parentNode.querySelector('.loading-overlay').style.display = 'none';" onerror="showMediaError(this, 'image')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <a href="contact.html" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+                            Book Your Free Check <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-8 px-4 rounded-b-xl">
+        <div class="container mx-auto text-center">
+            <p class="mb-2">Serving Toronto, Ontario, Canada and Surrounding Areas</p>
+            <p class="font-semibold">Premier Caulking & Sealing Services</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="tel:6475094346" class="hover:text-blue-300 transition duration-200">
+                    <i class="fas fa-phone text-xl"></i>
+                </a>
+                <a href="https://wa.me/message/5NIDPCR2Y2DGM1" class="hover:text-blue-300 transition duration-200">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </a>
+            </div>
+            <p class="mt-6 text-sm text-gray-400">© 2025 Caulking Whisperer. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/message/5NIDPCR2Y2DGM1" class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition duration-300 transform hover:scale-110">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+    <!-- JavaScript -->
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

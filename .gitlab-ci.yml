@@ -1,0 +1,72 @@
+stages:
+  - prepare
+  - verify
+  - pages
+
+variables:
+  PUBLIC_DIR: public
+
+prepare:
+  stage: prepare
+  image: alpine:3.18
+  before_script:
+    - apk add --no-cache rsync bash grep sed coreutils findutils
+  script:
+    - set -euo pipefail
+    - rm -rf "$PUBLIC_DIR" || true
+    - mkdir -p "$PUBLIC_DIR"
+    - rsync -a --exclude='.git' --exclude='.gitlab' --exclude='.gitlab-ci.yml' --exclude='node_modules' --exclude='venv' --exclude='*.bak' ./ "$PUBLIC_DIR"/
+    - ls -la "$PUBLIC_DIR" | sed -n '1,200p'
+  artifacts:
+    paths:
+      - "$PUBLIC_DIR"
+    expire_in: 1 hour
+  only:
+    - main
+
+verify:
+  stage: verify
+  image: alpine:3.18
+  dependencies:
+    - prepare
+  before_script:
+    - apk add --no-cache bash grep sed awk perl coreutils findutils
+  script:
+    - set -euo pipefail
+    - refs=$(grep -RohE '(src|href)=["'"'"']/?[^"'"'"']+["'"'"']' public | sed -E 's/^(src|href)=["'"'"']//; s/["'"'"']$//' | sed 's#^/##' | sort -u || true)
+    - missing=0
+    - |
+      for ref in $refs; do
+        if echo "$ref" | grep -qE '^(https?:|//|mailto:|tel:|data:)'; then
+          continue
+        fi
+        path="public/$ref"
+        if [ -d "$path" ]; then
+          path="$path/index.html"
+        fi
+        if [ ! -f "$path" ]; then
+          echo "MISSING: $ref -> expected at public/$ref"
+          missing=1
+        fi
+      done
+    - if [ "$missing" -eq 1 ]; then echo "One or more referenced assets are missing."; exit 2; fi
+  artifacts:
+    when: on_failure
+    paths:
+      - public
+  only:
+    - main
+
+pages:
+  stage: pages
+  image: alpine:3.18
+  dependencies:
+    - prepare
+    - verify
+  script:
+    - ls -la public | sed -n '1,200p'
+  artifacts:
+    paths:
+      - public
+  only:
+    - main

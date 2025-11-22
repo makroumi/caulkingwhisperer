@@ -8,6 +8,19 @@
     <meta name="description" content="Premier Toronto caulking services for homes, condos, and businesses. Affordable pricing from $55 for bathrooms, kitchens, windows, and more. Free checks!">
     <meta name="keywords" content="Toronto caulking services, condo caulking Toronto, bathroom caulking, kitchen sealing, mold prevention Toronto">
     <meta name="author" content="Caulking Whisperer">
+        <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Caulking Whisperer — Premier Toronto Caulking Services">
+    <meta property="og:description" content="Trusted caulking for Toronto homes, condos, and businesses. Prices from $55. Free 10-minute checks.">
+    <meta property="og:url" content="https://caulkingwhisperer.ca/">
+    <meta property="og:image" content="https://res.cloudinary.com/dojphvluv/image/upload/v1753164925/33351D91-9434-447F-906F-2D866391C1B8-removebg-preview_fb26lq.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Caulking Whisperer — Toronto Caulking">
+    <meta name="twitter:description" content="Trusted caulking for Toronto homes, condos, and businesses. From $55. Free checks.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dojphvluv/image/upload/v1753164925/33351D91-9434-447F-906F-2D866391C1B8-removebg-preview_fb26lq.png">
+
     <!-- Schema.org for SEO -->
     <script type="application/ld+json">
     {
@@ -16,7 +29,7 @@
         "name": "Caulking Whisperer",
         "telephone": "(647) 509-4346",
         "address": {
-            "@type": "PostalAddress",
+            "@type": "M6P2P2",
             "addressLocality": "Toronto",
             "addressRegion": "ON",
             "addressCountry": "CA"
@@ -61,13 +74,34 @@
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="nav-link active text-gray-800 font-medium">Home</a>
-                    <a href="services.html" class="nav-link text-gray-800 font-medium">Caulking Services</a>
-                    <a href="colors.html" class="nav-link text-gray-800 font-medium">Colors</a>
-                    <a href="blogs.html" class="nav-link text-gray-800 font-medium">Blogs</a>
-                    <a href="contact.html" class="nav-link text-gray-800 font-medium">Contact Us</a>
-                </nav>
+                <nav class="hidden md:flex items-center space-x-6">
+                      <a href="index.html" class="nav-link active text-gray-800 font-medium">Home</a>
+                      <a href="services.html" class="nav-link text-gray-800 font-medium">Caulking Services</a>
+                      <a href="colors.html" class="nav-link text-gray-800 font-medium">Colors</a>
+                      <a href="blogs.html" class="nav-link text-gray-800 font-medium">Blogs</a>
+                      <a href="contact.html" class="nav-link text-gray-800 font-medium">Contact Us</a>
+                    
+                      <!-- Social / Contact icons -->
+                      <div class="ml-4 flex items-center space-x-3">
+                        <!-- Phone -->
+                        <a href="tel:+16475094346" class="text-gray-700 hover:text-blue-600 transition" aria-label="Call Caulking Whisperer">
+                          <i class="fas fa-phone fa-lg"></i>
+                        </a>
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/16475094346" class="text-green-600 hover:text-green-700 transition" target="_blank" rel="noopener noreferrer" aria-label="Message on WhatsApp">
+                          <i class="fab fa-whatsapp fa-lg"></i>
+                        </a>
+                        <!-- Optional Facebook -->
+                        <a href="https://www.facebook.com/profile.php?id=61580098803426" class="text-gray-700 hover:text-blue-600 transition" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                          <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                        <!-- Optional Instagram -->
+                        <a href="https://www.instagram.com/caulkingwhisperer/" class="text-gray-700 hover:text-pink-500 transition" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                          <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                      </div>
+                    </nav>
+
             </div>
             <!-- Mobile Navigation -->
             <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-md">
@@ -76,6 +110,13 @@
                 <a href="colors.html" class="block py-2 text-gray-800 font-medium border-b border-gray-100">Colors</a>
                 <a href="blogs.html" class="block py-2 text-gray-800 font-medium border-b border-gray-100">Blogs</a>
                 <a href="contact.html" class="block py-2 text-gray-800 font-medium">Contact Us</a>
+                <!-- Mobile quick contact -->
+                <div class="flex justify-between items-center py-2">
+                  <a href="tel:+16475094346" class="text-gray-800 mr-4"><i class="fas fa-phone"></i></a>
+                  <a href="https://wa.me/16475094346" class="text-green-600 mr-4" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                  <a href="contact.html#contact" class="text-gray-800"><i class="fas fa-envelope"></i></a>
+                </div>
+
             </div>
         </div>
     </header>
@@ -275,14 +316,31 @@
         <div class="container mx-auto text-center">
             <p class="mb-2">Serving Toronto, Ontario, Canada and Surrounding Areas</p>
             <p class="font-semibold">Premier Caulking & Sealing Services</p>
-            <div class="mt-4 flex justify-center space-x-4">
-                <a href="tel:6475094346" class="hover:text-blue-300 transition duration-200">
-                    <i class="fas fa-phone text-xl"></i>
-                </a>
-                <a href="https://wa.me/message/5NIDPCR2Y2DGM1" class="hover:text-blue-300 transition duration-200">
-                    <i class="fab fa-whatsapp text-xl"></i>
-                </a>
-            </div>
+            <div class="mt-4 flex justify-center items-center space-x-6">
+  <!-- Phone (visible) -->
+  <a href="tel:+16475094346" class="flex items-center text-white hover:text-blue-300 transition" aria-label="Call Caulking Whisperer">
+    <i class="fas fa-phone text-xl"></i>
+    
+  </a>
+
+  <!-- WhatsApp (visible) -->
+  <a href="https://wa.me/16475094346" class="flex items-center text-white hover:text-green-300 transition" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp message">
+    <i class="fab fa-whatsapp text-xl"></i>
+    
+  </a>
+
+  
+
+  <!-- Social links -->
+  <a href="https://www.facebook.com/profile.php?id=61580098803426" class="text-white hover:text-blue-300 transition" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+    <i class="fab fa-facebook text-xl"></i>
+  </a>
+
+  <a href="https://www.instagram.com/caulkingwhisperer/" class="text-white hover:text-pink-300 transition" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+    <i class="fab fa-instagram text-xl"></i>
+  </a>
+</div>
+
             <p class="mt-6 text-sm text-gray-400">© 2025 Caulking Whisperer. All rights reserved.</p>
         </div>
     </footer>
@@ -292,6 +350,18 @@
             <i class="fab fa-whatsapp text-2xl"></i>
         </a>
     </div>
+    <script>
+      // Ensure tel/wa links open correctly on mobile/desktop
+      document.addEventListener('click', function(e){
+        const a = e.target.closest && e.target.closest('a');
+        if(!a) return;
+        // Coerce plain 10-digit numbers to E.164 for tel links (if needed)
+        if(a.href && a.href.startsWith('tel:')) {
+          // no-op placeholder — keep tel as is; this is a safe hook if you later want formatting
+        }
+      });
+    </script>
+
     <!-- JavaScript -->
     <script src="assets/js/scripts.js"></script>
 </body>

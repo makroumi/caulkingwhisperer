@@ -1,0 +1,21 @@
+{
+  "name": "caulkingwhisperer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start:static": "http-server public -p 8080 -c-1",
+    "lint:html": "html-validate \"public/**/*.html\"",
+    "lint:js": "eslint \"assets/js/**/*.js\" || true",
+    "a11y:home": "pa11y http://127.0.0.1:8080/ --standard WCAG2AA --timeout 30000",
+    "a11y:pages": "pa11y http://127.0.0.1:8080/services.html --standard WCAG2AA --timeout 30000 || true",
+    "linkcheck": "broken-link-checker --recursive --filter-level 1 --no-silent http://127.0.0.1:8080/ || true",
+    "ci": "npm run lint:html"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "html-validate": "^8.5.0",
+    "pa11y": "^6.0.0",
+    "broken-link-checker": "^0.7.20",
+    "eslint": "^8.0.0"
+  }
+}

@@ -1,0 +1,29 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Lockfile artefacts you DO want to keep
+# (package-lock.json should remain committed)
+
+# Python virtualenv
+.venv/
+venv/
+ENV/
+env/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Build / temporary
+dist/
+build/
+.cache/
+.temp/
+
+# Local dev server artifacts (if any)
+/public/node_modules/

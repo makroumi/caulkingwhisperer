@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Handle media errors for gallery images and videos
     window.showMediaError = function (element, type) {
         const container = element.parentNode;
-        container.querySelector('.loading-overlay').style.display = 'none';
+        const overlay = container.querySelector('.loading-overlay');
+        if (overlay) overlay.style.display = 'none';
         container.innerHTML = `<div class="media-error">Failed to load ${type}. Please try again later.</div>`;
     };
 

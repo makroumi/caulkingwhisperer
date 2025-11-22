@@ -8,14 +8,15 @@ variables:
 
 prepare:
   stage: prepare
-  image: alpine:3.18
+  image: node:18-alpine
   before_script:
-    - apk add --no-cache rsync bash grep sed coreutils findutils
+    - apk add --no-cache rsync bash coreutils findutils
   script:
     - set -euo pipefail
     - rm -rf "$PUBLIC_DIR" || true
     - mkdir -p "$PUBLIC_DIR"
     - rsync -a --exclude='.git' --exclude='.gitlab' --exclude='.gitlab-ci.yml' --exclude='node_modules' --exclude='venv' --exclude='*.bak' ./ "$PUBLIC_DIR"/
+    - echo "Prepared $PUBLIC_DIR:"
     - ls -la "$PUBLIC_DIR" | sed -n '1,200p'
   artifacts:
     paths:
@@ -26,47 +27,52 @@ prepare:
 
 verify:
   stage: verify
-  image: alpine:3.18
+  image: node:18-alpine
   dependencies:
     - prepare
   before_script:
-    - apk add --no-cache bash grep sed awk perl coreutils findutils
+    - apk add --no-cache bash grep sed awk coreutils findutils
   script:
     - set -euo pipefail
-    - refs=$(grep -RohE '(src|href)=["'"'"']/?[^"'"'"']+["'"'"']' public | sed -E 's/^(src|href)=["'"'"']//; s/["'"'"']$//' | sed 's#^/##' | sort -u || true)
+    - echo "Scanning HTML files for local asset references..."
+    - |
+      refs=$(grep -RohE '(src|href)=["'"'"']/?[^"'"'"']+["'"'"']' "$PUBLIC_DIR" 2>/dev/null | sed -E 's/^(src|href)=["'"'"']//; s/["'"'"']$//' | sed 's#^/##' | sort -u || true)
+    - echo "Found references (first 200 lines):"; echo "$refs" | sed -n '1,200p' || true
     - missing=0
     - |
       for ref in $refs; do
-        if echo "$ref" | grep -qE '^(https?:|//|mailto:|tel:|data:)'; then
+        if echo "$ref" | grep -qE '^(https?:|//|mailto:|tel:|data:|#)'; then
           continue
         fi
-        path="public/$ref"
+        path="$PUBLIC_DIR/$ref"
         if [ -d "$path" ]; then
           path="$path/index.html"
         fi
         if [ ! -f "$path" ]; then
-          echo "MISSING: $ref -> expected at public/$ref"
+          echo "MISSING: $ref -> expected at $PUBLIC_DIR/$ref"
           missing=1
         fi
       done
     - if [ "$missing" -eq 1 ]; then echo "One or more referenced assets are missing."; exit 2; fi
+    - echo "Verify passed: all referenced local assets exist in $PUBLIC_DIR (basic check)."
   artifacts:
     when: on_failure
     paths:
-      - public
+      - "$PUBLIC_DIR"
   only:
     - main
 
 pages:
   stage: pages
-  image: alpine:3.18
+  image: node:18-alpine
   dependencies:
     - prepare
     - verify
   script:
-    - ls -la public | sed -n '1,200p'
+    - echo "Publishing $PUBLIC_DIR (contents below):"
+    - ls -la "$PUBLIC_DIR" | sed -n '1,200p'
   artifacts:
     paths:
-      - public
+      - "$PUBLIC_DIR"
   only:
     - main
